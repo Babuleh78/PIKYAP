@@ -43,7 +43,7 @@ class CDLibrary:
     def list_libraries_with_cd_in_name(self, name_part):
         result = {}
         for cd, library in self.relationships:
-            if 'House' in library.name:
+            if name_part in library.name:
                 if library.name not in result:
                     result[library.name] = []
                 result[library.name].append(cd)
@@ -80,11 +80,11 @@ if __name__ == "__main__":
         print(f"{library_name}: {cds}")
 
     # Подсчет длительности дисков в каждом магазине и вывод
-    print("nCount of Rock CDs in Shops:")
+    print("Count of Rock CDs in Shops:")
     for library_name, count in cd_library.count_total_duration_per_library():
         print(f"{library_name}: {count} minutes")
 
     # Вывод магазинов, в названии которых присутствует слово 'House' и их содержимого
-    print("Shops containing 'House' and their CDs:")
+    print("Shops containing 'House' and their names:")
     for library_name, cds in cd_library.list_libraries_with_cd_in_name('House').items():
         print(f"{library_name}: {cds}")
