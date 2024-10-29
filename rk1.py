@@ -6,7 +6,7 @@ class CD:
         self.genre = genre   
         self.duration = minutes
     def __repr__(self):
-        return f"CD(ID: {self.cd_id}, Title: '{self.title}', Artist: '{self.artist}', Genre: '{self.genre}', Minutes: '{self.duration}')"
+        return f"CD(ID: {self.cd_id}, Title: '{self.title}', Artist: '{self.artist}', Genre: '{self.genre}', Minutes: '{self.duration}') \n"
 
 class Shop:
     def __init__(self, library_id, name):
@@ -16,7 +16,7 @@ class Shop:
     def add_cd(self, cd):
         self.cds.append(cd)
     def __repr__(self):
-        return f"Library(ID: {self.library_id}, Name: '{self.name}', CDs: {self.cds})"
+        return f"Library(ID: {self.library_id}, Name: '{self.name}', CDs: {self.cds}) \n "
 
 class CDLibrary:
     def __init__(self):
@@ -25,7 +25,7 @@ class CDLibrary:
         self.relationships.append((cd, library))
         library.add_cd(cd)  
     def __repr__(self):
-        return f"CDLibrary(Relationships: {len(self.relationships)})"
+        return f"CDLibrary(Relationships: {len(self.relationships)}) \n"
     def list_cds_in_libraries(self):
         result = {}
         for cd, library in self.relationships:
